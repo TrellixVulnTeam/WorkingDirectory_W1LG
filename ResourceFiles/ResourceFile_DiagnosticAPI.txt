@@ -1,0 +1,93 @@
+#############################################################################################
+#    Filename   :
+#    Description:
+#    Version    :  1.0
+#    Created    :
+#    Compiler   :  python
+#    Author     :
+#    Company    :
+#    Revision History:
+#############################################################################################
+
+*** Settings ***
+
+Library         Selenium2Library
+Library	        RequestsLibrary
+Library         OperatingSystem
+Library         String
+Library         JSONLibrary
+Library    ../Libraries/testraillib.py
+
+
+Variables    ../TestData/Testdata_web.py
+Variables    ../ConfigurationBase/Framework_Properties.py
+
+***Keywords***
+
+###################################################################
+# KeyWord Name : Create Connection (Suite Setup)
+# Document     : To Create Session of the requested gateway (Used as Suite Setup)
+###################################################################
+Create Connection
+    Run keyword and ignore error    SUITE READINESS TESTRAIL
+    ${headers}   Create Dictionary    Content-Type=application/json; charset=utf-8     Authorization=${BearerToken}
+    Create Session	    DiagnosticGateway    ${DiagnosticGateway_base_url}    headers=${headers}
+
+######################################################################
+# KeyWord Name : Test Teardown (To Post-back Results to TestRail)
+# Usage        : keyword to be executed as tear down
+###################################################################
+Test Teardown
+    [Arguments]    ${status}    ${caseid}
+    Run Keyword And Ignore Error    TEST RESULT UPDATE    ${run_id}    ${caseid}    ${status}   ${TEST MESSAGE}
+
+###################################################################
+# KeyWord Name : SUITE READINESS TESTRAIL
+# Usage        : For Testrail credentials
+###################################################################
+SUITE READINESS TESTRAIL
+     ${project_id} =    get_projectid    ${ProjectName}    ${TestRailUrl}    ${TestRailUser}    ${TestRailPassword}
+	 ${plan_id} =    get_planid    ${PlanName}    ${project_id}    ${TestRailUrl}    ${TestRailUser}    ${TestRailPassword}
+	 ${run_id} =    get_runid    ${plan_id}    ${TestRailUrl}    ${TestRailUser}    ${TestRailPassword}
+	 Set Global Variable      ${run_id}
+	 Set Suite Variable       ${SuccessMessage}    "TEST RESULTS"
+	 Set Suite Variable       ${ExecutionMessage}    "TEST RESULTS"
+
+###################################################################
+# KeyWord Name : TEST RESULT UPDATE
+# Usage        : Updating Test Result in Testrail
+###################################################################
+TEST RESULT UPDATE
+    [Arguments]    ${runid}    ${caseid}    ${status}    ${comment}
+	update_result    ${runid}    ${caseid}    ${status}    ${comment}    ${TestRailUrl}    ${TestRailUser}    ${TestRailPassword}
+
+###################################################################
+# KeyWord Name : GET
+# Document     : GET Request
+###################################################################
+GET
+    [Arguments]    ${Endpoint}    ${Expected_Status_Code}   ${Parameters}=${EMPTY}
+    ${resp}=	Get Request	        DiagnosticGateway      	/${Endpoint}/${Parameters}
+    Should Be Equal As Strings	    ${resp.status_code} 	${Expected_Status_Code}
+    [Return]    ${resp}
+
+###################################################################
+# KeyWord Name : GET CONTENT
+# Document     : To parse response content for the given JSON_Path
+###################################################################
+GET CONTENT
+    [Arguments]    ${Endpoint}    ${Expected_Status_Code}    ${Json_Path}    ${ObjectNumber}=${0}
+    ${response}=   GET    ${Endpoint}    ${Expected_Status_Code}
+    ${value}=  Get Value From Json     ${response.json()[${ObjectNumber}]}    ${Json_Path}
+    ${content}=   Convert To String  ${value}
+    [Return]    ${content}
+
+###################################################################
+# KeyWord Name : POST
+# Document     : Keyword for POST to the Stargate API Gateway
+###################################################################
+POST
+    [Arguments]    ${Endpoint}    ${Expected_Status_Code}    ${Data}=sample
+    ${json}  Get Binary File  ./RequestBody/${Data}.json
+    ${resp}=	Post Request    DiagnosticGateway    ${Endpoint}    data=${json}
+    [Return]    ${resp}

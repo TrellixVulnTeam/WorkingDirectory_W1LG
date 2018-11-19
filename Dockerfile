@@ -1,0 +1,2 @@
+ADD . /code
+WORKDIR /code

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.7.0 on win32)" generated="20181112 14:37:21.519">
+<suite id="s1" name="1 PreConfiguration" source="C:\Users\ageorge\Desktop\Automation-KORE\StandAlone\KoreAutomation\Testscripts\1_PreConfiguration.robot">
+<kw name="Suite Readiness" library="ConfigurationSetup" type="setup">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>SUITE READINESS TESTRAIL</arg>
+</arguments>
+<kw name="SUITE READINESS TESTRAIL" library="Testrail_Resource">
+<kw name="Get Projectid" library="testraillib">
+<arguments>
+<arg>${ProjectName}</arg>
+<arg>${TestRailUrl}</arg>
+<arg>${TestRailUser}</arg>
+<arg>${TestRailPassword}</arg>
+</arguments>
+<assign>
+<var>${project_id}</var>
+</assign>
+<msg timestamp="20181112 14:37:23.474" level="INFO">Projeccts : [{'id': 7, 'name': 'StarHub', 'announcement': None, 'show_announcement': False, 'is_completed': False, 'completed_on': None, 'suite_mode': 3, 'url': 'https://korewireless.testrail.com/index.php?/projects/overview/7'}, {'id': 8, 'name': 'Telematics', 'announcement': None, 'show_announcement': False, 'is_completed': False, 'completed_on': None, 'suite_mode': 3, 'url': 'https://korewireless.testrail.com/index.php?/projects/overview/8'}, {'id': 16, 'name': 'OMS', 'announcement': 'Project is a back up of OMS test cases.', 'show_announcement': False, 'is_completed': False, 'completed_on': 1437064363, 'suite_mode': 3, 'url': 'https://korewireless.testrail.com/index.php?/projects/overview/16'}, {'id': 22, 'name': 'Dummy', 'announcement': 'Project to be used to learn to use Test Rail', 'show_announcement': False, 'is_completed': False, 'completed_on': None, 'suite_mode': 3, 'url': 'https://korewireless.testrail.com/index.php?/projects/overview/22'}, {'id': 23, 'name': 'KORE ONE', 'announcement': None, 'show_announcement': False, 'is_completed': False, 'completed_on': None, 'suite_mode': 3, 'url': 'https://korewireless.testrail.com/index.php?/projects/overview/23'}, {'id': 25, 'name': 'Teraflow', 'announcement': None, 'show_announcement': False, 'is_completed': False, 'completed_on': None, 'suite_mode': 3, 'url': 'https://korewireless.testrail.com/index.php?/projects/overview/25'}, {'id': 26, 'name': 'Ripple', 'announcement': None, 'show_announcement': False, 'is_completed': False, 'completed_on': None, 'suite_mode': 3, 'url': 'https://korewireless.testrail.com/index.php?/projects/overview/26'}, {'id': 27, 'name': 'Glass', 'announcement': None, 'show_announcement': False, 'is_completed': False, 'completed_on': None, 'suite_mode': 3, 'url': 'https://korewireless.testrail.com/index.php?/projects/overview/27'}, {'id': 28, 'name': 'Bling', 'announcement': None, 'show_announcement': False, 'is_completed': False, 'completed_on': None, 'suite_mode': 3, 'url': 'https://korewireless.testrail.com/index.php?/projects/overview/28'}, {'id': 29, 'name': 'Genesis', 'announcement': None, 'show_announcement': False, 'is_completed': False, 'completed_on': None, 'suite_mode': 3, 'url': 'https://korewireless.testrail.com/index.php?/projects/overview/29'}]</msg>
+<msg timestamp="20181112 14:37:23.474" level="INFO">${project_id} = 27</msg>
+<status status="PASS" starttime="20181112 14:37:21.851" endtime="20181112 14:37:23.474"></status>
+</kw>
+<kw name="Get Planid" library="testraillib">
+<arguments>
+<arg>${PlanName}</arg>
+<arg>${project_id}</arg>
+<arg>${TestRailUrl}</arg>
+<arg>${TestRailUser}</arg>
+<arg>${TestRailPassword}</arg>
+</arguments>
+<assign>
+<var>${plan_id}</var>
+</assign>
+<msg timestamp="20181112 14:37:25.052" level="INFO">Plans : [{'id': 23600, 'name': 'Services 8.97 - Glass Login', 'description': 'Only the TEL-16128 Glass Ticket will be included during Services 8.97 Release Testing', 'milestone_id': 601, 'assignedto_id': None, 'is_completed': False, 'completed_on': None, 'passed_count': 0, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 0, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 5, 'custom_status4_count': 0, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1541616029, 'created_by': 19, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/23600'}, {'id': 23553, 'name': 'EULA -Enhancements', 'description': None, 'milestone_id': 598, 'assignedto_id': None, 'is_completed': False, 'completed_on': None, 'passed_count': 2, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 0, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 0, 'custom_status4_count': 0, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1541503000, 'created_by': 64, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/23553'}, {'id': 23545, 'name': 'Glass Login Increment 2 Feature Testing Phase', 'description': None, 'milestone_id': 555, 'assignedto_id': None, 'is_completed': False, 'completed_on': None, 'passed_count': 4, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 0, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 0, 'custom_status4_count': 0, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1541490370, 'created_by': 64, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/23545'}, {'id': 23142, 'name': 'Services 8.95 (Glass Release Flag Clean up)', 'description': None, 'milestone_id': 585, 'assignedto_id': None, 'is_completed': True, 'completed_on': 1540328732, 'passed_count': 9, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 0, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 0, 'custom_status4_count': 0, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1539790039, 'created_by': 6, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/23142'}, {'id': 22877, 'name': 'Glass Login Increment 1 &amp; 2 Integration Testing Phase', 'description': 'This test plan is to cater the __Glass Login Increment 1 and 2 Integration Testing Phase__.\r\nQA will keep on adding those Story Tickets under this EPIC __[TEL-14960 - Glass Login](https://koresystemsgroup.atlassian.net/browse/TEL-14960)__ to this test plan.\r\n\r\n\r\n', 'milestone_id': 555, 'assignedto_id': None, 'is_completed': False, 'completed_on': None, 'passed_count': 0, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 0, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 0, 'custom_status4_count': 0, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1538752619, 'created_by': 19, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/22877'}, {'id': 22875, 'name': 'Glass Login Increment 1 Feature Testing Phase', 'description': 'This test plan is to cater the __Glass Login Increment 1 Feature Testing Phase__.\r\nQA will keep on adding those Story Tickets under this EPIC __[TEL-14960 - Glass Login](https://koresystemsgroup.atlassian.net/browse/TEL-14960)__ to this test plan.\r\n\r\n\r\n', 'milestone_id': 555, 'assignedto_id': None, 'is_completed': False, 'completed_on': None, 'passed_count': 35, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 1, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 0, 'custom_status4_count': 2, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1538752457, 'created_by': 19, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/22875'}, {'id': 22816, 'name': 'Glass Phase-1 -Backlog Stories [Set-3]', 'description': None, 'milestone_id': 506, 'assignedto_id': None, 'is_completed': False, 'completed_on': None, 'passed_count': 4, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 0, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 0, 'custom_status4_count': 0, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1538649558, 'created_by': 64, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/22816'}, {'id': 22781, 'name': 'Glass Phase-2 - Automation Testing -Demo2', 'description': None, 'milestone_id': 555, 'assignedto_id': None, 'is_completed': True, 'completed_on': 1541490173, 'passed_count': 4, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 1, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 0, 'custom_status4_count': 0, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1538574059, 'created_by': 64, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/22781'}, {'id': 22768, 'name': 'Glass Phase-2 - Automation Testing -Demo', 'description': None, 'milestone_id': 555, 'assignedto_id': None, 'is_completed': True, 'completed_on': 1541490192, 'passed_count': 5, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 0, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 0, 'custom_status4_count': 0, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1538568077, 'created_by': 64, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/22768'}, {'id': 22546, 'name': 'Glass 1.2', 'description': None, 'milestone_id': 565, 'assignedto_id': None, 'is_completed': True, 'completed_on': 1538672468, 'passed_count': 11, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 0, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 0, 'custom_status4_count': 1, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1537901289, 'created_by': 8, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/22546'}, {'id': 22494, 'name': 'Glass Phase-2 - Automation Testing', 'description': None, 'milestone_id': 555, 'assignedto_id': None, 'is_completed': False, 'completed_on': None, 'passed_count': 0, 'blocked_count': 4, 'untested_count': 0, 'retest_count': 0, 'failed_count': 1, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 0, 'custom_status4_count': 0, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1537703548, 'created_by': 64, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/22494'}, {'id': 22427, 'name': 'Glass Phase-1 -Backlog Stories [Set-2]', 'description': None, 'milestone_id': 544, 'assignedto_id': None, 'is_completed': True, 'completed_on': 1537910602, 'passed_count': 2, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 0, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 0, 'custom_status4_count': 0, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1537436057, 'created_by': 64, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/22427'}, {'id': 22403, 'name': 'Glass 1.1 - Services 8.90 (Smoke Test)', 'description': None, 'milestone_id': 549, 'assignedto_id': None, 'is_completed': True, 'completed_on': 1537901231, 'passed_count': 3, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 0, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 0, 'custom_status4_count': 1, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1537369512, 'created_by': 8, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/22403'}, {'id': 22387, 'name': 'Glass 1.1 - Services 8.90 (Smoke Test)', 'description': None, 'milestone_id': 549, 'assignedto_id': None, 'is_completed': True, 'completed_on': 1537910683, 'passed_count': 3, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 1, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 0, 'custom_status4_count': 0, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1537308913, 'created_by': 130, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/22387'}, {'id': 22229, 'name': 'Glass 1.1 - Services 8.90 (Smoke Test)', 'description': None, 'milestone_id': 549, 'assignedto_id': None, 'is_completed': True, 'completed_on': 1537200328, 'passed_count': 4, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 0, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 0, 'custom_status4_count': 0, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1536789011, 'created_by': 6, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/22229'}, {'id': 22079, 'name': 'Glass Phase-1: Backlog Tickets-Feature Testing', 'description': None, 'milestone_id': 544, 'assignedto_id': None, 'is_completed': True, 'completed_on': 1537200319, 'passed_count': 2, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 0, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 0, 'custom_status4_count': 0, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1536224505, 'created_by': 64, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/22079'}, {'id': 21704, 'name': '8.87 Smoke Glass', 'description': None, 'milestone_id': 525, 'assignedto_id': None, 'is_completed': True, 'completed_on': 1537200322, 'passed_count': 33, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 0, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 2, 'custom_status4_count': 2, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1534950900, 'created_by': 56, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/21704'}, {'id': 21456, 'name': 'Glass Phase-1: Integration Testing -Glass', 'description': None, 'milestone_id': 506, 'assignedto_id': None, 'is_completed': True, 'completed_on': 1537200308, 'passed_count': 46, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 0, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 0, 'custom_status4_count': 0, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1533827435, 'created_by': 64, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/21456'}, {'id': 21454, 'name': 'Glass Phase-1: Smoke Testing -PRiSM Stories(TEL-15082, TEL-15149 and TEL-15081)', 'description': None, 'milestone_id': 518, 'assignedto_id': None, 'is_completed': True, 'completed_on': 1534939685, 'passed_count': 7, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 0, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 0, 'custom_status4_count': 0, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1533821929, 'created_by': 64, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/21454'}, {'id': 21431, 'name': 'Glass Phase-1: Integration Testing -PRiSM', 'description': None, 'milestone_id': 506, 'assignedto_id': None, 'is_completed': True, 'completed_on': 1537200312, 'passed_count': 9, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 0, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 0, 'custom_status4_count': 0, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1533738293, 'created_by': 64, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/21431'}, {'id': 21267, 'name': 'Services 8.85 Smoke', 'description': None, 'milestone_id': 510, 'assignedto_id': None, 'is_completed': True, 'completed_on': 1537200325, 'passed_count': 1, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 0, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 0, 'custom_status4_count': 0, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1533056815, 'created_by': 56, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/21267'}, {'id': 21165, 'name': 'Glass Phase-1: Feature Testing', 'description': None, 'milestone_id': 506, 'assignedto_id': None, 'is_completed': True, 'completed_on': 1537200315, 'passed_count': 33, 'blocked_count': 0, 'untested_count': 0, 'retest_count': 0, 'failed_count': 0, 'custom_status1_count': 0, 'custom_status2_count': 0, 'custom_status3_count': 0, 'custom_status4_count': 0, 'custom_status5_count': 0, 'custom_status6_count': 0, 'custom_status7_count': 0, 'project_id': 27, 'created_on': 1532516448, 'created_by': 64, 'url': 'https://korewireless.testrail.com/index.php?/plans/view/21165'}]
+Planid : 22494</msg>
+<msg timestamp="20181112 14:37:25.052" level="INFO">${plan_id} = 22494</msg>
+<status status="PASS" starttime="20181112 14:37:23.474" endtime="20181112 14:37:25.052"></status>
+</kw>
+<kw name="Get Runid" library="testraillib">
+<arguments>
+<arg>${plan_id}</arg>
+<arg>${TestRailUrl}</arg>
+<arg>${TestRailUser}</arg>
+<arg>${TestRailPassword}</arg>
+</arguments>
+<assign>
+<var>${run_id}</var>
+</assign>
+<msg timestamp="20181112 14:37:26.240" level="INFO">${run_id} = 22495</msg>
+<status status="PASS" starttime="20181112 14:37:25.052" endtime="20181112 14:37:26.240"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${run_id}</arg>
+</arguments>
+<msg timestamp="20181112 14:37:26.240" level="INFO">${run_id} = 22495</msg>
+<status status="PASS" starttime="20181112 14:37:26.240" endtime="20181112 14:37:26.240"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${SuccessMessage}</arg>
+<arg>"TEST RESULTS"</arg>
+</arguments>
+<msg timestamp="20181112 14:37:26.240" level="INFO">${SuccessMessage} = "TEST RESULTS"</msg>
+<status status="PASS" starttime="20181112 14:37:26.240" endtime="20181112 14:37:26.240"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${ExecutionMessage}</arg>
+<arg>"TEST RESULTS"</arg>
+</arguments>
+<msg timestamp="20181112 14:37:26.240" level="INFO">${ExecutionMessage} = "TEST RESULTS"</msg>
+<status status="PASS" starttime="20181112 14:37:26.240" endtime="20181112 14:37:26.240"></status>
+</kw>
+<status status="PASS" starttime="20181112 14:37:21.851" endtime="20181112 14:37:26.240"></status>
+</kw>
+<status status="PASS" starttime="20181112 14:37:21.851" endtime="20181112 14:37:26.240"></status>
+</kw>
+<status status="PASS" starttime="20181112 14:37:21.851" endtime="20181112 14:37:26.240"></status>
+</kw>
+<test id="s1-t1" name="Test case C001: SID: Create a New Company for Automation">
+<kw name="Test Setup PreConfiguration" library="ConfigurationSetup" type="setup">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PREV_TEST_STATUS}'=='FAIL'</arg>
+<arg>Fail</arg>
+<arg>Skipping test because '${PREV_TEST_NAME}' is NOT completed successfully.</arg>
+<arg>ELSE</arg>
+<arg>Open New Browser</arg>
+<arg>${SID_base_url}</arg>
+<arg>Forgot your password?</arg>
+</arguments>
+<kw name="Open New Browser" library="ConfigurationSetup">
+<arguments>
+<arg>${SID_base_url}</arg>
+<arg>Forgot your password?</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${Browser_name}</arg>
+<arg>60s</arg>
+</arguments>
+<msg timestamp="20181112 14:37:26.240" level="INFO">Opening browser 'chrome' to base url 'http://sid.qa9.koretelematics.com/'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20181112 14:37:26.256" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20181112 14:37:26.256" endtime="20181112 14:37:26.256"></status>
+</kw>
+<msg timestamp="20181112 14:37:26.256" level="FAIL">WebDriverException: Message: 'chromedriver.exe' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+</msg>
+<status status="FAIL" starttime="20181112 14:37:26.240" endtime="20181112 14:37:26.256"></status>
+</kw>
+<status status="FAIL" starttime="20181112 14:37:26.240" endtime="20181112 14:37:26.256"></status>
+</kw>
+<status status="FAIL" starttime="20181112 14:37:26.240" endtime="20181112 14:37:26.256"></status>
+</kw>
+<status status="FAIL" starttime="20181112 14:37:26.240" endtime="20181112 14:37:26.256"></status>
+</kw>
+<kw name="Test Teardown" library="ConfigurationSetup" type="teardown">
+<arguments>
+<arg>${TEST STATUS}</arg>
+<arg>001</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PREV_TEST_STATUS}'=='FAIL'</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>TEST RESULT UPDATE</arg>
+<arg>${run_id}</arg>
+<arg>${caseid}</arg>
+<arg>BLOCKED</arg>
+<arg>${TEST MESSAGE}</arg>
+<arg>${Teststepinfo}</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>TEST RESULT UPDATE</arg>
+<arg>${run_id}</arg>
+<arg>${caseid}</arg>
+<arg>${status}</arg>
+<arg>${TEST MESSAGE}</arg>
+<arg>${Teststepinfo}</arg>
+</arguments>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>TEST RESULT UPDATE</arg>
+<arg>${run_id}</arg>
+<arg>${caseid}</arg>
+<arg>${status}</arg>
+<arg>${TEST MESSAGE}</arg>
+<arg>${Teststepinfo}</arg>
+</arguments>
+<kw name="TEST RESULT UPDATE" library="Testrail_Resource">
+<arguments>
+<arg>${run_id}</arg>
+<arg>${caseid}</arg>
+<arg>${status}</arg>
+<arg>${TEST MESSAGE}</arg>
+<arg>${Teststepinfo}</arg>
+</arguments>
+<msg timestamp="20181112 14:37:26.272" level="FAIL">Variable '${Teststepinfo}' not found.</msg>
+<status status="FAIL" starttime="20181112 14:37:26.272" endtime="20181112 14:37:26.272"></status>
+</kw>
+<status status="PASS" starttime="20181112 14:37:26.272" endtime="20181112 14:37:26.272"></status>
+</kw>
+<status status="PASS" starttime="20181112 14:37:26.272" endtime="20181112 14:37:26.272"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20181112 14:37:26.272" endtime="20181112 14:37:26.272"></status>
+</kw>
+<status status="PASS" starttime="20181112 14:37:26.272" endtime="20181112 14:37:26.272"></status>
+</kw>
+<status status="PASS" starttime="20181112 14:37:26.272" endtime="20181112 14:37:26.272"></status>
+</kw>
+<doc>SID: Create a New Company for Automation</doc>
+<tags>
+<tag>C001</tag>
+</tags>
+<status status="FAIL" starttime="20181112 14:37:26.240" endtime="20181112 14:37:26.272" critical="yes">Setup failed:
+WebDriverException: Message: 'chromedriver.exe' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+</status>
+</test>
+<kw name="Suite Tear Down Web" library="HelperMethods" type="teardown">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Delete All Cookies</arg>
+</arguments>
+<kw name="Delete All Cookies" library="Selenium2Library">
+<doc>Deletes all cookies.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20181112 14:37:26.272" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20181112 14:37:26.272" endtime="20181112 14:37:26.272"></status>
+</kw>
+<msg timestamp="20181112 14:37:26.272" level="FAIL">No browser is open.</msg>
+<status status="FAIL" starttime="20181112 14:37:26.272" endtime="20181112 14:37:26.272"></status>
+</kw>
+<status status="PASS" starttime="20181112 14:37:26.272" endtime="20181112 14:37:26.272"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20181112 14:37:26.272" endtime="20181112 14:37:26.272"></status>
+</kw>
+<status status="PASS" starttime="20181112 14:37:26.272" endtime="20181112 14:37:26.272"></status>
+</kw>
+<status status="PASS" starttime="20181112 14:37:26.272" endtime="20181112 14:37:26.272"></status>
+</kw>
+<status status="FAIL" starttime="20181112 14:37:21.519" endtime="20181112 14:37:26.272"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1">C001</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="1 PreConfiguration">1 PreConfiguration</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

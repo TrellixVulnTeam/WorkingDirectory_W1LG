@@ -1,0 +1,11 @@
+{
+  "diagnosticType": "Disconnect",
+  "serviceTypeUrn": "string",
+  "customerUrn": "string",
+  "starGateCarrierAccountName": "string",
+  "diagnosticRequestDevices": [
+    {
+      "iccid": "string"
+    }
+  ]
+}
